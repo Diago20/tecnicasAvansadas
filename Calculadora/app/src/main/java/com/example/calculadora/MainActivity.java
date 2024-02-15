@@ -2,6 +2,7 @@ package com.example.calculadora;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         Button num8 = findViewById(R.id.num8);
         Button num9 = findViewById(R.id.num9);
 
-        Button on = findViewById(R.id.on);
+        Button ser = findViewById(R.id.ser);
         Button off = findViewById(R.id.off);
         Button ac = findViewById(R.id.ac);
         Button del = findViewById(R.id.del);
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         Button equal = findViewById(R.id.equal);
         Button plus = findViewById(R.id.plus);
         Button point = findViewById(R.id.point);
+        Button siguiente = findViewById(R.id.siguiente);
+        Button anterior = findViewById(R.id.anterior);
 
         TextView screen = findViewById(R.id.screen);
 
@@ -48,11 +51,11 @@ public class MainActivity extends AppCompatActivity {
             screen.setText("0");
         });
 
-        off.setOnClickListener(view -> screen.setVisibility(View.GONE));
+        /*off.setOnClickListener(view -> screen.setVisibility(View.GONE));
         on.setOnClickListener(view -> {
             screen.setVisibility(View.VISIBLE);
             screen.setText("0");
-        });
+        });*/
 
         ArrayList<Button> nums = new ArrayList<>();
         nums.add(num0);
@@ -81,6 +84,9 @@ public class MainActivity extends AppCompatActivity {
         opers.add(times);
         opers.add(plus);
         opers.add(min);
+        opers.add(ser);
+        opers.add(siguiente);
+        opers.add(anterior);
         for (Button b : opers){
             b.setOnClickListener(view -> {
                 firstNum = Double.parseDouble(screen.getText().toString());
@@ -108,6 +114,25 @@ public class MainActivity extends AppCompatActivity {
             double secondNum = Double.parseDouble(screen.getText().toString());
             double result;
             switch (operation) {
+                case"ant": {
+                    Intent intent = new Intent(MainActivity.this, area.class);
+                    startActivity(intent);
+                }
+                result=0;
+                    break;
+                case"sig": {
+                    Intent intent = new Intent(MainActivity.this, peso.class);
+                    startActivity(intent);
+                }
+                result=0;
+                break;
+                case "!":
+                    double serial = 1;
+                    for (int i=1; i<=firstNum;i++){
+                        serial= serial*i;
+                    }
+                    result = serial;
+                    break;
                 case "/":
                     result = firstNum/secondNum;
                     break;
