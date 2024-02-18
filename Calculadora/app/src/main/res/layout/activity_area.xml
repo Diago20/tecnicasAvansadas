@@ -4,6 +4,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#5E8698"
     tools:context=".area">
 
+    <TextView
+        android:id="@+id/tvTitulo"
+        android:layout_width="410dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="4dp"
+        android:background="#273061"
+        android:text="Calculadora de Area"
+        android:textAlignment="center"
+        android:textColor="#EDE3E3"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="152dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="84dp"
+        android:paddingTop="5dp"
+        android:text="Sacar Area de:  "
+        android:textAlignment="center"
+        android:textColor="#0B0A0A"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.239"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
+
+    <CheckBox
+        android:id="@+id/cbCuadrado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Cuadrado"
+        app:layout_constraintEnd_toStartOf="@+id/cbRectangulo"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <CheckBox
+        android:id="@+id/cbRectangulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="72dp"
+        android:text="Rectangulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="216dp" />
+
+    <CheckBox
+        android:id="@+id/bcTriangulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="Triangulo"
+        app:layout_constraintEnd_toStartOf="@+id/cbCirculo"
+        app:layout_constraintHorizontal_bias="0.416"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbCuadrado" />
+
+    <CheckBox
+        android:id="@+id/cbCirculo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="96dp"
+        android:text="Circulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cbRectangulo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
