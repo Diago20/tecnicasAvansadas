@@ -2,18 +2,18 @@ package com.example.calculadora;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class peso extends AppCompatActivity {
     private TextView etPeso, etAltura, etResultado;
     private CheckBox cbFemenino, cbMasculino;
-    private Button btIMC, btPesoIdeal, btBorrar;
+    private Button btIMC, btPesoIdeal, btBorrar,btCalculadora,btCalcularArea;
     double pi = 0, piup = 0, pidown = 0, f1 = 2.25, f2 = 45, m1 = 2.7, m2 = 47.75;
     boolean bandera = true;
 
@@ -22,14 +22,31 @@ public class peso extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_peso);
 
-        etPeso = (EditText) findViewById(R.id.etPeso);
-        etAltura = (EditText) findViewById(R.id.etAltura);
-        etResultado = (EditText) findViewById(R.id.etResultado);
-        cbFemenino = (CheckBox) findViewById(R.id.cbFemenino);
-        cbMasculino = (CheckBox) findViewById(R.id.cbMasculino);
-        btIMC = (Button) findViewById(R.id.btIMC);
-        btPesoIdeal = (Button) findViewById(R.id.btPesoIdeal);
-        btBorrar = (Button) findViewById(R.id.btBorrar);
+        etPeso =findViewById(R.id.etPeso);
+        etAltura =findViewById(R.id.etBase);
+        etResultado =findViewById(R.id.etResultado);
+        cbFemenino =findViewById(R.id.cbFemenino);
+        cbMasculino =findViewById(R.id.cbMasculino);
+        btIMC =findViewById(R.id.btIMC);
+        btPesoIdeal =findViewById(R.id.btPesoIdeal);
+        btBorrar =findViewById(R.id.btBorrar);
+        btCalculadora =findViewById(R.id.btCalculadora);
+        btCalcularArea =findViewById(R.id.btCalcularIMC);
+
+        btCalcularArea.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(peso.this, area.class);
+                startActivity(intent);
+            }
+        });
+        btCalculadora.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(peso.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void imc(View view) {
@@ -123,5 +140,4 @@ public class peso extends AppCompatActivity {
         cbMasculino.setChecked(true);
         Toast.makeText(this,"Masculino",Toast.LENGTH_LONG).show();
     }
-
 }

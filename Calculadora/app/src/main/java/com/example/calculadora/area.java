@@ -2,6 +2,7 @@ package com.example.calculadora;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,7 +15,7 @@ public class area extends AppCompatActivity {
 
     RadioGroup rgContenedor;
     RadioButton rbCirculo,rbTriangulo,rbCuadrado,rbRectangulo;
-    Button btSeleccionar;
+    Button btSeleccionar,btCalculadora,btCalcularIMC;
     private Intent intent;
 
     @Override
@@ -27,6 +28,23 @@ public class area extends AppCompatActivity {
         rbTriangulo = findViewById(R.id.rbTriangulo);
         rbCirculo = findViewById(R.id.rbCirculo);
         btSeleccionar = findViewById(R.id.btSeleccionar);
+        btCalculadora = findViewById(R.id.btCalculadora);
+        btCalcularIMC = findViewById(R.id.btCalcularIMC);
+
+        btCalcularIMC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(area.this, peso.class);
+                startActivity(intent);
+            }
+        });
+        btCalculadora.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(area.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
        btSeleccionar.setOnClickListener(new View.OnClickListener() {
            @Override

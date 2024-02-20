@@ -159,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
         btimc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, peso.class); // Reemplaza OtraActivity con la actividad que deseas abrir
+                Intent intent = new Intent(MainActivity.this, peso.class);
                 startActivity(intent);
             }
         });
@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
         btarea.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, area.class); // Reemplaza OtraActivity con la actividad que deseas abrir
+                Intent intent = new Intent(MainActivity.this, area.class);
                 startActivity(intent);
             }
         });

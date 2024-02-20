@@ -92,4 +92,28 @@
         app:layout_constraintHorizontal_bias="0.169"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rgContenedor" />
+
+    <Button
+        android:id="@+id/btCalcularIMC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="52dp"
+        android:backgroundTint="#8D90CF"
+        android:text="Calculadora IMC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/btCalculadora"
+        app:layout_constraintTop_toBottomOf="@+id/btSeleccionar" />
+
+    <Button
+        android:id="@+id/btCalculadora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="52dp"
+        android:backgroundTint="#8D90CF"
+        android:text="Calculadora"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btSeleccionar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

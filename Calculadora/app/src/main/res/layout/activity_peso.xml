@@ -4,55 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#39651D"
+    android:background="#77CC40"
     tools:context=".peso">
 
 
     <EditText
         android:id="@+id/etResultado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
+        android:layout_width="183dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="60dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Resultado"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="502dp" />
+        app:layout_constraintTop_toBottomOf="@+id/cbMasculino" />
 
     <TextView
         android:id="@+id/tvResultado"
         android:layout_width="79dp"
         android:layout_height="27dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="264dp"
+        android:layout_marginTop="56dp"
         android:text="Resultado: "
         app:layout_constraintEnd_toStartOf="@+id/etPeso"
-        app:layout_constraintHorizontal_bias="0.212"
+        app:layout_constraintHorizontal_bias="0.297"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
+        app:layout_constraintTop_toBottomOf="@+id/cbFemenino" />
 
     <EditText
-        android:id="@+id/etAltura"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/etBase"
+        android:layout_width="188dp"
+        android:layout_height="45dp"
         android:layout_marginStart="49dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="40dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Altura en mtrs"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvAltura"
+        app:layout_constraintStart_toEndOf="@+id/tvBase"
         app:layout_constraintTop_toBottomOf="@+id/etPeso" />
 
     <TextView
-        android:id="@+id/tvAltura"
+        android:id="@+id/tvBase"
         android:layout_width="79dp"
         android:layout_height="27dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="32dp"
         android:text="Altura (m):"
-        app:layout_constraintEnd_toStartOf="@+id/etAltura"
+        app:layout_constraintEnd_toStartOf="@+id/etBase"
         app:layout_constraintHorizontal_bias="0.24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPeso" />
@@ -94,13 +93,12 @@
 
     <EditText
         android:id="@+id/etPeso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="190dp"
+        android:layout_height="42dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="48dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Peso en Kg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo" />
 
@@ -108,11 +106,11 @@
         android:id="@+id/cbFemenino"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="72dp"
+        android:layout_marginStart="64dp"
         android:layout_marginTop="56dp"
         android:text="Femenino"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAltura" />
+        app:layout_constraintTop_toBottomOf="@+id/tvBase" />
 
     <CheckBox
         android:id="@+id/cbMasculino"
@@ -124,33 +122,62 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/cbFemenino"
-        app:layout_constraintTop_toBottomOf="@+id/etAltura" />
-
-    <Button
-        android:id="@+id/btIMC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="IMC"
-        app:layout_constraintEnd_toStartOf="@+id/btPesoIdeal"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="614dp" />
+        app:layout_constraintTop_toBottomOf="@+id/etBase" />
 
     <Button
         android:id="@+id/btPesoIdeal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="36dp"
+        android:onClick="setBtPesoIdeal"
         android:text="Peso Ideal"
         app:layout_constraintEnd_toStartOf="@+id/btBorrar"
-        tools:layout_editor_absoluteY="614dp" />
+        app:layout_constraintTop_toBottomOf="@+id/etResultado" />
+
+    <Button
+        android:id="@+id/btCalculadora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="24dp"
+        android:text="Calculadora"
+        app:layout_constraintEnd_toStartOf="@+id/btCalcularIMC"
+        app:layout_constraintHorizontal_bias="0.833"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btIMC" />
 
     <Button
         android:id="@+id/btBorrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="20dp"
+        android:onClick="borrar"
         android:text="Borrar"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="614dp" />
+        app:layout_constraintTop_toBottomOf="@+id/etResultado" />
+
+    <Button
+        android:id="@+id/btCalcularIMC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="32dp"
+        android:text="Calculadora Area"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btBorrar" />
+
+    <Button
+        android:id="@+id/btIMC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:onClick="imc"
+        android:text="IMC"
+        app:layout_constraintEnd_toStartOf="@+id/btPesoIdeal"
+        app:layout_constraintHorizontal_bias="0.518"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etResultado" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
