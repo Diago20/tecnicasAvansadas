@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
         Button point = findViewById(R.id.point);
         Button siguiente = findViewById(R.id.siguiente);
         Button anterior = findViewById(R.id.anterior);
+        Button btimc = findViewById(R.id.btimc);
+        Button btarea = findViewById(R.id.btarea);
 
         TextView screen = findViewById(R.id.screen);
 
@@ -87,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
         opers.add(ser);
         opers.add(siguiente);
         opers.add(anterior);
+        opers.add(btimc);
+        opers.add(btarea);
         for (Button b : opers){
             b.setOnClickListener(view -> {
                 firstNum = Double.parseDouble(screen.getText().toString());
@@ -114,39 +118,59 @@ public class MainActivity extends AppCompatActivity {
             double secondNum = Double.parseDouble(screen.getText().toString());
             double result;
             switch (operation) {
-                case"ant": {
-                    Intent intent = new Intent(MainActivity.this, area.class);
-                    startActivity(intent);
+                    case "!":
+                        double serial = 1;
+                        for (int i = 1; i <= firstNum; i++) {
+                            serial = serial * i;
+                        }
+                        result = serial;
+                        break;
+                    case "/":
+                        result = firstNum / secondNum;
+                        break;
+                    case "X":
+                        result = firstNum * secondNum;
+                        break;
+                    case "-":
+                        result = firstNum - secondNum;
+                        break;
+                    default:
+                        result = firstNum + secondNum;
                 }
-                result=0;
-                    break;
-                case"sig": {
-                    Intent intent = new Intent(MainActivity.this, peso.class);
-                    startActivity(intent);
-                }
-                result=0;
-                break;
-                case "!":
-                    double serial = 1;
-                    for (int i=1; i<=firstNum;i++){
-                        serial= serial*i;
-                    }
-                    result = serial;
-                    break;
-                case "/":
-                    result = firstNum/secondNum;
-                    break;
-                case "X":
-                    result = firstNum*secondNum;
-                    break;
-                case  "-":
-                    result = firstNum-secondNum;
-                    break;
-                default:
-                    result = firstNum+secondNum;
-            }
-            screen.setText(String.valueOf(result));
-            firstNum = result;
+                screen.setText(String.valueOf(result));
+                firstNum = result;
         });
+        anterior.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, area.class);
+                startActivity(intent);
+            }
+        });
+
+        siguiente.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, peso.class); // Reemplaza OtraActivity con la actividad que deseas abrir
+                startActivity(intent);
+            }
+        });
+
+        btimc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, peso.class); // Reemplaza OtraActivity con la actividad que deseas abrir
+                startActivity(intent);
+            }
+        });
+
+        btarea.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, area.class); // Reemplaza OtraActivity con la actividad que deseas abrir
+                startActivity(intent);
+            }
+        });
+
     }
 }

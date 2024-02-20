@@ -13,6 +13,18 @@
         android:theme="@style/Theme.Calculadora"
         tools:targetApi="31">
         <activity
+            android:name=".areaRectangulo"
+            android:exported="false" />
+        <activity
+            android:name=".areaCirculo"
+            android:exported="false" />
+        <activity
+            android:name=".areaTriangulo"
+            android:exported="false" />
+        <activity
+            android:name=".areaCuadrado"
+            android:exported="false" />
+        <activity
             android:name=".peso"
             android:exported="false" />
         <activity

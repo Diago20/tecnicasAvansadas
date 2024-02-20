@@ -26,54 +26,70 @@
         android:id="@+id/textView2"
         android:layout_width="152dp"
         android:layout_height="29dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="112dp"
         android:paddingTop="5dp"
         android:text="Sacar Area de:  "
         android:textAlignment="center"
         android:textColor="#0B0A0A"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.239"
+        app:layout_constraintHorizontal_bias="0.135"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
 
-    <CheckBox
-        android:id="@+id/cbCuadrado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:text="Cuadrado"
-        app:layout_constraintEnd_toStartOf="@+id/cbRectangulo"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
-    <CheckBox
-        android:id="@+id/cbRectangulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="72dp"
-        android:text="Rectangulo"
+    <RadioGroup
+        android:id="@+id/rgContenedor"
+        android:layout_width="312dp"
+        android:layout_height="153dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="216dp" />
-
-    <CheckBox
-        android:id="@+id/bcTriangulo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:text="Triangulo"
-        app:layout_constraintEnd_toStartOf="@+id/cbCirculo"
-        app:layout_constraintHorizontal_bias="0.416"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbCuadrado" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
 
-    <CheckBox
-        android:id="@+id/cbCirculo"
+        <RadioButton
+            android:id="@+id/rbCuadrado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cuadrado" />
+
+        <RadioButton
+            android:id="@+id/rbCirculo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Circulo" />
+
+        <RadioButton
+            android:id="@+id/rbRectangulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rectangulo" />
+
+        <RadioButton
+            android:id="@+id/rbTriangulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Triangulo" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="157dp"
+        android:layout_height="24dp"
+        android:text="Seleccionar una opcion"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="91dp" />
+
+    <Button
+        android:id="@+id/btSeleccionar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="96dp"
-        android:text="Circulo"
+        android:layout_marginTop="136dp"
+        android:backgroundTint="#8D90CF"
+        android:text="Seleccionar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbRectangulo" />
+        app:layout_constraintHorizontal_bias="0.169"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgContenedor" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -100,9 +100,9 @@
                 android:text="0" />
 
             <Button
-                android:id="@+id/morvida"
+                android:id="@+id/btimc"
                 style="@style/Button1"
-                android:text="mo" />
+                android:text="IMC" />
         </LinearLayout>
 
         <LinearLayout
@@ -137,9 +137,9 @@
                 android:text="." />
 
             <Button
-                android:id="@+id/area"
+                android:id="@+id/btarea"
                 style="@style/Button1"
-                android:text="ar" />
+                android:text="are" />
         </LinearLayout>
 
         <LinearLayout
