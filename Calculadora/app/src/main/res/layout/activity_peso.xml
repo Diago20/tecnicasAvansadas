@@ -8,17 +8,6 @@
     tools:context=".peso">
 
 
-    <EditText
-        android:id="@+id/etResultado"
-        android:layout_width="183dp"
-        android:layout_height="114dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="60dp"
-        android:ems="10"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cbMasculino" />
-
     <TextView
         android:id="@+id/tvResultado"
         android:layout_width="79dp"
@@ -128,12 +117,35 @@
         android:id="@+id/btPesoIdeal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="28dp"
         android:onClick="setBtPesoIdeal"
         android:text="Peso Ideal"
         app:layout_constraintEnd_toStartOf="@+id/btBorrar"
-        app:layout_constraintTop_toBottomOf="@+id/etResultado" />
+        app:layout_constraintTop_toBottomOf="@+id/tvResultado" />
+
+    <Button
+        android:id="@+id/btIMC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:onClick="imc"
+        android:text="IMC"
+        app:layout_constraintEnd_toStartOf="@+id/btPesoIdeal"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvResultado" />
+
+    <Button
+        android:id="@+id/btBorrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="28dp"
+        android:onClick="borrar"
+        android:text="Borrar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvResultado" />
 
     <Button
         android:id="@+id/btCalculadora"
@@ -148,17 +160,6 @@
         app:layout_constraintTop_toBottomOf="@+id/btIMC" />
 
     <Button
-        android:id="@+id/btBorrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="20dp"
-        android:onClick="borrar"
-        android:text="Borrar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etResultado" />
-
-    <Button
         android:id="@+id/btCalcularIMC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -168,16 +169,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btBorrar" />
 
-    <Button
-        android:id="@+id/btIMC"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:onClick="imc"
-        android:text="IMC"
-        app:layout_constraintEnd_toStartOf="@+id/btPesoIdeal"
-        app:layout_constraintHorizontal_bias="0.518"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etResultado" />
+    <TextView
+        android:id="@+id/tvResultado"
+        android:layout_width="205dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.797"
+        app:layout_constraintStart_toEndOf="@+id/tvResultado"
+        app:layout_constraintTop_toBottomOf="@+id/cbMasculino" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

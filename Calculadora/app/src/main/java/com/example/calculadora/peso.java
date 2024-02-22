@@ -11,20 +11,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class peso extends AppCompatActivity {
-    private TextView etPeso, etAltura, etResultado;
+    private TextView etPeso, etAltura, tvResultado;
     private CheckBox cbFemenino, cbMasculino;
     private Button btIMC, btPesoIdeal, btBorrar,btCalculadora,btCalcularArea;
     double pi = 0, piup = 0, pidown = 0, f1 = 2.25, f2 = 45, m1 = 2.7, m2 = 47.75;
     boolean bandera = true;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_peso);
 
         etPeso =findViewById(R.id.etPeso);
         etAltura =findViewById(R.id.etBase);
-        etResultado =findViewById(R.id.etResultado);
+        tvResultado =findViewById(R.id.tvResultado);
         cbFemenino =findViewById(R.id.cbFemenino);
         cbMasculino =findViewById(R.id.cbMasculino);
         btIMC =findViewById(R.id.btIMC);
@@ -73,14 +73,14 @@ public class peso extends AppCompatActivity {
                 Toast.makeText(this, "Tu IMC es: " + bmi + "\nMuy obeso", Toast.LENGTH_LONG).show();
             }
 
-            etResultado.setText(String.valueOf(bmi));
+            tvResultado.setText(String.valueOf(bmi));
 
         }
     }
     public void borrar(View view){
         etPeso.setText("");
         etAltura.setText("");
-        etResultado.setText("");
+        tvResultado.setText("");
         pi=0;
         piup=0;
         pidown=0;
@@ -90,7 +90,6 @@ public class peso extends AppCompatActivity {
         cbMasculino.setChecked(false);
         bandera=true;
     }
-
     public void setBtPesoIdeal(View view){
         float kg= Float.parseFloat(etPeso.getText().toString());
         float m = Float.parseFloat(etAltura.getText().toString());
@@ -117,7 +116,7 @@ public class peso extends AppCompatActivity {
         if (bandera){
             piup=(pi*0.10)+pi;
             Toast.makeText(this,"Resultado del peso ideal"+pi+"\n",Toast.LENGTH_LONG).show();
-            etResultado.setText(String.valueOf((pi)));
+            tvResultado.setText(String.valueOf((pi)));
             pidown=(pi-(pi*0.10));
 
             if(kg>piup){
