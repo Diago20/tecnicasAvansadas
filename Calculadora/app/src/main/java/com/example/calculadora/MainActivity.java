@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         Button num9 = findViewById(R.id.num9);
 
         Button ser = findViewById(R.id.ser);
-        Button off = findViewById(R.id.off);
+        Button F = findViewById(R.id.F);
         Button ac = findViewById(R.id.ac);
         Button del = findViewById(R.id.del);
         Button div = findViewById(R.id.div);
@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
         opers.add(anterior);
         opers.add(btimc);
         opers.add(btarea);
+        opers.add(F);
         for (Button b : opers){
             b.setOnClickListener(view -> {
                 firstNum = Double.parseDouble(screen.getText().toString());
@@ -118,6 +119,20 @@ public class MainActivity extends AppCompatActivity {
             double secondNum = Double.parseDouble(screen.getText().toString());
             double result;
             switch (operation) {
+
+                    case"F":
+                        StringBuilder sequence = new StringBuilder();
+                        int prev = 0;
+                        int current = 1;
+                        int num = (int) firstNum;
+                        for(int i=0; i < num; i ++){
+                            int next = prev + current;
+                            prev = current;
+                            current = next;
+
+                        }
+                        result = prev;
+                    break;
                     case "!":
                         double serial = 1;
                         for (int i = 1; i <= firstNum; i++) {

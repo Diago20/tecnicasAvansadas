@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "378130826311",
+    "project_id": "viernes-b70b3",
+    "storage_bucket": "viernes-b70b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378130826311:android:ee1debfefe019cc5fd9d62",
+        "android_client_info": {
+          "package_name": "com.example.calculadora"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5eDml1LoOQcrq7r8paac1NUPdOai_rnc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

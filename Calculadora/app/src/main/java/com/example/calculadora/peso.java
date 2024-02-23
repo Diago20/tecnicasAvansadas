@@ -11,9 +11,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class peso extends AppCompatActivity {
-    private TextView etPeso, etAltura, tvResultado;
-    private CheckBox cbFemenino, cbMasculino;
-    private Button btIMC, btPesoIdeal, btBorrar,btCalculadora,btCalcularArea;
+    public TextView etPeso, etAltura, tvResultado;
+    public CheckBox cbFemenino, cbMasculino;
+    public Button btIMC, btPesoIdeal, btBorrar,btCalculadora,btCalcularArea;
     double pi = 0, piup = 0, pidown = 0, f1 = 2.25, f2 = 45, m1 = 2.7, m2 = 47.75;
     boolean bandera = true;
 
@@ -90,6 +90,8 @@ public class peso extends AppCompatActivity {
         cbMasculino.setChecked(false);
         bandera=true;
     }
+
+
     public void setBtPesoIdeal(View view){
         float kg= Float.parseFloat(etPeso.getText().toString());
         float m = Float.parseFloat(etAltura.getText().toString());

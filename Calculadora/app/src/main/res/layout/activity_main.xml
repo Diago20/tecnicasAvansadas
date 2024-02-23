@@ -75,9 +75,9 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/off"
+                android:id="@+id/F"
                 style="@style/Button1"
-                android:text="off" />
+                android:text="F" />
 
             <Button
                 android:id="@+id/num8"
